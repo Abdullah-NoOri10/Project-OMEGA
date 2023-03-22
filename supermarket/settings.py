@@ -27,8 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.0.126',
                  '127.0.0.1',
-                 '192.168.0.115',
-                 '172.20.10.3',]
+                 '192.168.0.115',]
 
 
 # Application definition
@@ -123,8 +122,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-MEDIA_URL = 'images/'
+STATIC_URL = '/static/'
+MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'

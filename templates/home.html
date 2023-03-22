@@ -4,8 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>E-commerce</title>
-    <link rel="stylesheet" href="static\css\style.css" />
+    <title>MultiShop - Online Shop Website Template</title>
+    <link rel="stylesheet" href="static/css/style.css" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="Free HTML Templates" name="keywords" />
     <meta content="Free HTML Templates" name="description" />
@@ -46,13 +46,11 @@
         <div class="col-lg-6 d-none d-lg-block">
           <div class="d-inline-flex align-items-center h-100">
             <a class="text-body mr-3" href="">About</a>
-
           </div>
         </div>
         <div class="col-lg-6 text-center text-lg-right">
           <div class="d-inline-flex align-items-center">
             <div class="btn-group">
-              
               {% if user.is_authenticated == True %}
               <button
                 type="button"
@@ -69,8 +67,7 @@
             >
               Guest
             </button>
-            {% endif %}
-
+              {% endif %}
               <div class="dropdown-menu dropdown-menu-right">
                 {% if user.is_authenticated %}
                 <a href="{% url 'sign-out' %}"><button class="dropdown-item" type="button">Logout</button></a>
@@ -81,8 +78,8 @@
                 {% endif %}
               </div>
             </div>
-
-
+            </div>
+            </div>
           </div>
           <div class="d-inline-flex align-items-center d-block d-lg-none">
             <! ?-- should be removed? -->
@@ -115,10 +112,10 @@
         <div class="col-lg-4">
           <a href="" class="text-decoration-none">
             <span class="h1 text-uppercase text-primary bg-dark px-2"
-              >E-</span
+              >E</span
             >
             <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1"
-              >commerce</span
+              >Commerce</span
             >
           </a>
         </div>
@@ -127,9 +124,9 @@
             <div class="input-group">
               <input
                 type="text"
+                name="q"
                 class="form-control"
                 placeholder="Search for products"
-                name = 'q'
               />
               <div class="input-group-append">
                 <span class="input-group-text bg-transparent text-primary">
@@ -144,7 +141,7 @@
 
         <div class="col-lg-4 col-6 text-right">
           <p class="m-0">Customer Service</p>
-          <h5 class="m-0">+012 345 6789</h5>
+          <h5 class="m-0">+93 -------</h5>
         </div>
       </div>
     </div>
@@ -172,26 +169,9 @@
           >
             <div class="navbar-nav w-100">
               <div class="nav-item dropdown dropright">
-                <a
-                  href="#"
-                  class="nav-link dropdown-toggle"
-                  data-toggle="dropdown"
-                <i class="fa fa-angle-right float-right mt-1"></i
-                ></a>
-                <div
-                  class="dropdown-menu position-absolute rounded-0 border-0 m-0"
-                >
-                  <! ?-- should be removed? -->
-
-
-                </div>
-              </div>
-
-              <! ?-- should be updated? -->
-              {% for item in catagories %}
-              <a href="{% url 'product' %}?q={{item}}" class="nav-item nav-link">{{item}}</a>
-              {% endfor %}
-
+                {% for item in list_catagories %}
+              <a href="{% url 'product'%}?q={{item}}" class="nav-item nav-link">{{item}}</a>
+                {% endfor %}
             </div>
           </nav>
         </div>
@@ -220,9 +200,8 @@
               id="navbarCollapse"
             >
               <div class="navbar-nav mr-auto py-0">
-
+                <a href="index.html" class="nav-item nav-link active">Home</a>
                 <a href="{% url 'product' %}" class="nav-item nav-link">Shop</a>
-
                 <div class="nav-item dropdown">
                   <a
                     href="#"
@@ -235,7 +214,6 @@
                     <a href="checkout.html" class="dropdown-item">Checkout</a>
                   </div>
                 </div>
-
               </div>
               <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                 <a href="" class="btn px-0">
@@ -287,7 +265,7 @@
               >
                 <img
                   class="position-absolute w-100 h-100"
-                  src="static/img/photo1.jpg"
+                  src="img/carousel-1.jpg"
                   style="object-fit: cover"
                 />
                 <div
@@ -297,7 +275,7 @@
                     <h1
                       class="display-4 text-white mb-3 animate__animated animate__fadeInDown"
                     >
-                      Dairies
+                      Men Fashion
                     </h1>
                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn">
                       Lorem rebum magna amet lorem magna erat diam stet. Sadips
@@ -305,7 +283,7 @@
                     </p>
                     <a
                       class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
-                      href="{% url 'product' %}"
+                      href="#"
                       >Shop Now</a
                     >
                   </div>
@@ -317,7 +295,7 @@
               >
                 <img
                   class="position-absolute w-100 h-100"
-                  src="static/img/photo2.jpg"
+                  src="img/carousel-2.jpg"
                   style="object-fit: cover"
                 />
                 <div
@@ -327,7 +305,7 @@
                     <h1
                       class="display-4 text-white mb-3 animate__animated animate__fadeInDown"
                     >
-                      Snacks
+                      Women Fashion
                     </h1>
                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn">
                       Lorem rebum magna amet lorem magna erat diam stet. Sadips
@@ -335,7 +313,7 @@
                     </p>
                     <a
                       class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
-                      href="{% url 'product' %}"
+                      href="#"
                       >Shop Now</a
                     >
                   </div>
@@ -347,7 +325,7 @@
               >
                 <img
                   class="position-absolute w-100 h-100"
-                  src="static/img/photo3.jpg"
+                  src="img/carousel-3.jpg"
                   style="object-fit: cover"
                 />
                 <div
@@ -357,14 +335,15 @@
                     <h1
                       class="display-4 text-white mb-3 animate__animated animate__fadeInDown"
                     >
-                      Beverages
+                      Kids Fashion
                     </h1>
                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn">
-                      Canned - Bottled - Wine - Juice - Beer etc...
+                      Lorem rebum magna amet lorem magna erat diam stet. Sadips
+                      duo stet amet amet ndiam elitr ipsum diam
                     </p>
                     <a
                       class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
-                      href="{% url 'product' %}"
+                      href="#"
                       >Shop Now</a
                     >
                   </div>
@@ -375,17 +354,17 @@
         </div>
         <div class="col-lg-4">
           <div class="product-offer mb-30" style="height: 200px">
-            <img class="img-fluid" src="static/img/photo4.jpg" alt="" />
+            <img class="img-fluid" src="img/offer-1.jpg" alt="" />
             <div class="offer-text">
-              <h6 class="text-white text-uppercase">Save 20% On Fruits</h6>
+              <h6 class="text-white text-uppercase">Save 20%</h6>
               <h3 class="text-white mb-3">Special Offer</h3>
               <a href="" class="btn btn-primary">Shop Now</a>
             </div>
           </div>
           <div class="product-offer mb-30" style="height: 200px">
-            <img class="img-fluid" src="static/img/photo5.jpg" alt="" />
+            <img class="img-fluid" src="img/offer-2.jpg" alt="" />
             <div class="offer-text">
-              <h6 class="text-white text-uppercase">Save 10% On Halal Meats</h6>
+              <h6 class="text-white text-uppercase">Save 20%</h6>
               <h3 class="text-white mb-3">Special Offer</h3>
               <a href="" class="btn btn-primary">Shop Now</a>
             </div>
@@ -422,7 +401,7 @@
             style="padding: 30px"
           >
             <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
-            <h5 class="font-weight-semi-bold m-0">14 - Minutes Return</h5>
+            <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
@@ -431,7 +410,7 @@
             style="padding: 30px"
           >
             <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
-            <h5 class="font-weight-semi-bold m-0">9/11 Support</h5>
+            <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
           </div>
         </div>
       </div>
@@ -446,10 +425,10 @@
       <div class="row px-xl-5 pb-3">
         {% for item in catagories %}
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-          <a class="text-decoration-none" href="">
+          <a class="text-decoration-none" href="{% url 'product'%}?q={{item}}">
             <div class="cat-item d-flex align-items-center mb-4">
               <div class="overflow-hidden" style="width: 100px; height: 100px">
-                <img class="img-fluid" src="static/img/heineken.jpeg" alt="" />
+                <img class="img-fluid" src="img/cat-1.jpg" alt="" />
               </div>
               <div class="flex-fill pl-3">
                 <h6>{{item}}</h6>
@@ -469,11 +448,11 @@
         <span class="bg-secondary pr-3">Featured Products</span>
       </h2>
       <div class="row px-xl-5">
-        {% for product in product %}
+        {% for products in product %}
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
           <div class="product-item bg-light mb-4">
             <div class="product-img position-relative overflow-hidden">
-              <img class="img-fluid w-100" src="static/img/chocolates.jpg" alt="" />
+              <img class="img-fluid w-100" src="{{products.ImageUrl}}" alt="" />
               <div class="product-action">
                 <a class="btn btn-outline-dark btn-square" href=""
                   ><i class="fa fa-shopping-cart"></i
@@ -491,13 +470,13 @@
             </div>
             <div class="text-center py-4">
               <a class="h6 text-decoration-none text-truncate" href=""
-                >{{product.name}}</a
+                >{{products.name}}</a
               >
               <div
                 class="d-flex align-items-center justify-content-center mt-2"
               >
-                <h5>$123.00</h5>
-                <h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                <h5>${{products.price}}</h5>
+                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
               </div>
               <div
                 class="d-flex align-items-center justify-content-center mb-1"
@@ -511,9 +490,9 @@
               </div>
             </div>
           </div>
-        </div>
-        {% endfor %}
+          
       </div>
+      {% endfor %}
     </div>
     <!-- Products End -->
 

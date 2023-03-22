@@ -55,8 +55,7 @@ class Product(models.Model):
         return url
 
     def __str__(self):
-        return self.name
-        # return str(self.name) + ": $" + str(self.price)
+        return str(self.name) + ": $" + str(self.price)
 
   
 
